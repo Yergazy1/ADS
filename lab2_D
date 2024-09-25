@@ -1,0 +1,84 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+using namespace std;
+typedef pair<int, int> intPair;
+
+struct node{
+    int val;
+    node* next;
+    node(x){
+        val = x;
+        next = NULL;
+    }
+}
+struct queue{
+    private:
+    node *tail;
+    node* head;
+    vector<int> arr;
+    intPair mp;
+    void all() {
+        node *cur = head;
+        while(cur!=NULL){
+            arr.push_back(cur->val);
+            cur = cur->next;
+        }
+    }
+    void calc() {
+        for(int x:arr) {
+            mp[x]++;
+        }
+    }
+    int get_max() {
+        int max_fr = 0;
+        for (const auto &p:mp) {
+           max_fr = max(p.second,max_fr)
+        }
+    }
+    vector<int> get_models(max_fr) {
+        vector<int> modes;
+        for(const auto &p:mp) {
+            if (p.first==max_fr) {
+                modes.push_back(p.first);
+            }
+        }
+        return modes;
+    }
+    public:
+    list() {
+        size = 0;
+        head = tail = NULL;
+
+    }
+    void add(x){
+        size++;
+        node *n = new node(x);
+        node->next = n;
+        tail = n;
+    }
+    void modes() {
+        all();
+        calc();
+        int max_fr = get_max();
+        vector<int> m = get_models(max_fr);
+        
+    }
+    
+    
+
+}
+
+
+int main() {
+    int n,k;
+    cin>>n;
+    queue q;
+    for(int i = 0;i<n;i++) {
+        cin>>k;
+        q.add(k);
+    }
+    modes();
+
+}
